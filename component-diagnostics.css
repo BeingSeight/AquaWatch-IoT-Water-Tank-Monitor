@@ -1,0 +1,17 @@
+.component-image {
+  height: 152px;
+  margin-bottom: 18px;
+  border: 1px solid #d9e8e9;
+  border-radius: 9px;
+  background-color: #fff;
+  background-image: url("assets/iot-components-sheet.png");
+  background-repeat: no-repeat;
+  background-size: 300% 200%;
+}
+.component-image.sensor { background-position: 0% 0%; }
+.component-image.nodemcu { background-position: 50% 0%; }
+.component-image.wifi { background-position: 100% 0%; }
+.component-image.cloud { background-position: 0% 100%; }
+.component-image.pump { background-position: 100% 100%; }
+.health-logic { margin: 0 0 16px; padding: 10px; border-left: 3px solid #59bbb6; background: #f8fbfb; color: #536d76; font-size: .72rem; line-height: 1.55; }
+.health-logic strong { color: #1a4c5b; }

@@ -396,6 +396,85 @@ Read the question, answer it aloud, then use the memory line. These MCQs cover t
     - D. IoT removes the need for water storage
     - **Answer: A.**
 
+# Instrument Working and Fault Detection MCQs
+
+55. **How does an ultrasonic water-level sensor measure level?**
+    - A. Sends a sound pulse and calculates distance from the returning echo
+    - B. Sees the water colour
+    - C. Stores the water in memory
+    - D. Uses the Wi-Fi password
+    - **Answer: A.**
+
+56. **When is a sensor reading considered healthy?**
+    - A. It is recent, within the calibrated range, and changes logically with the tank level
+    - B. It is always exactly 50%
+    - C. It has no timestamp
+    - D. It is copied manually
+    - **Answer: A.**
+
+57. **Which is a likely ultrasonic-sensor fault sign?**
+    - A. No echo, impossible distance, or a sudden unexplained jump
+    - B. A normal 50% reading
+    - C. A fresh timestamp
+    - D. Good Wi-Fi signal
+    - **Answer: A.**
+
+58. **What does NodeMCU do in this project?**
+    - A. Reads the sensor, calculates percentage, and sends it to the cloud by Wi-Fi
+    - B. Holds all the water
+    - C. Replaces the tank
+    - D. Measures the water by itself without a sensor
+    - **Answer: A.**
+
+59. **How can we know that the NodeMCU is working?**
+    - A. Its heartbeat/timer runs, voltage is normal, and fresh readings are being sent
+    - B. The tank is painted blue
+    - C. The cloud page is closed
+    - D. The pump is unplugged
+    - **Answer: A.**
+
+60. **Which sign suggests a NodeMCU problem?**
+    - A. Heartbeat stops, device repeatedly resets, or readings stop updating
+    - B. One normal sensor reading
+    - C. A full water tank
+    - D. A successful cloud write
+    - **Answer: A.**
+
+61. **Which checks show that Wi-Fi communication is healthy?**
+    - A. Good signal strength, low delay, few retries, and successful cloud updates
+    - B. High tank capacity only
+    - C. A relay label only
+    - D. An old reading on screen
+    - **Answer: A.**
+
+62. **How is the cloud/dashboard connection checked?**
+    - A. Compare the latest virtual-pin timestamp with the device's sent reading
+    - B. Check the water colour
+    - C. Measure wire length only
+    - D. Restart the building
+    - **Answer: A.**
+
+63. **How do we verify that a relay and pump really worked?**
+    - A. Confirm command and feedback, then check whether water level changes as expected
+    - B. Assume every ON command is successful
+    - C. Check Wi-Fi name only
+    - D. Hide the pump status
+    - **Answer: A.**
+
+64. **Why should an automatic pump not act on one invalid reading?**
+    - A. It could start or stop wrongly; validate/retry readings first
+    - B. It makes the sensor faster
+    - C. It saves no electricity
+    - D. It removes cloud storage
+    - **Answer: A.**
+
+65. **What does the deployed project’s health page demonstrate?**
+    - A. Diagnostic rules; actual hardware must send live telemetry to prove real health
+    - B. A physical sensor is already installed in every tank
+    - C. The dashboard can repair a broken pump
+    - D. The cloud does not require data
+    - **Answer: A.**
+
 # 10-Second Revision
 
 ```text
