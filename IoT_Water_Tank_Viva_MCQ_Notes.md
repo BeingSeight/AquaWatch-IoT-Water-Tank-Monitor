@@ -173,6 +173,41 @@ Read the question, answer it aloud, then use the memory line. These MCQs cover t
     - D. Replacing a sensor
     - **Answer: A.**
 
+**GPIO–A. How many commonly usable digital GPIO pins does a NodeMCU ESP8266 development board expose?**
+    - A. About 11: D0–D8 plus RX and TX
+    - B. 1 only
+    - C. 50 only
+    - D. No digital pins
+    - **Answer: A.** *Say “about 11 usable digital GPIOs” in viva. RX/TX are normally used for serial communication, so they may not be free in every project.*
+
+**GPIO–B. How many analogue input pins does a usual NodeMCU ESP8266 board have?**
+    - A. One: A0 / ADC0
+    - B. Eleven
+    - C. Zero
+    - D. Twenty
+    - **Answer: A.** *A0 reads an analogue voltage; ordinary GPIO pins read/write digital HIGH or LOW.*
+
+**GPIO–C. Are GPIO input and output separate physical groups of pins?**
+    - A. No. A GPIO is general-purpose and is configured in software as input or output
+    - B. Yes. Inputs can never become outputs
+    - C. Yes. Outputs can never read a signal
+    - D. GPIO works only as output
+    - **Answer: A.**
+
+**GPIO–D. Why should GPIO0, GPIO2 and GPIO15 be used carefully?**
+    - A. They affect the ESP8266 boot mode; wrong external wiring can stop it from starting
+    - B. They contain extra water
+    - C. They are cloud-only pins
+    - D. They are the analogue input
+    - **Answer: A.**
+
+**GPIO–E. Why should GPIO6–GPIO11 normally not be used in a NodeMCU project?**
+    - A. They are connected internally to flash memory
+    - B. They are water-level probes
+    - C. They are all analogue pins
+    - D. They are Wi-Fi antennas
+    - **Answer: A.**
+
 24. **What does a breadboard provide?**
     - A. Solderless temporary circuit connections
     - B. Cloud hosting
