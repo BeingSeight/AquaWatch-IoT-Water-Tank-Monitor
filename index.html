@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="IoT smart water tank monitoring dashboard." />
+    <title>AquaWatch · Smart Tank Monitor</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#dashboard"><span class="brand-mark">AW</span><span>AquaWatch</span></a>
+      <nav aria-label="Main navigation"><button class="nav-link active" data-page="dashboard">Dashboard</button><button class="nav-link" data-page="health">System health</button></nav>
+      <div class="live"><i></i> Simulated live data</div>
+    </header>
+
+    <main>
+      <section id="dashboard" class="page active" aria-labelledby="dashboard-title">
+        <div class="hero">
+          <div><p class="eyebrow">CASE STUDY 3 · IOT WATER LEVEL MONITORING</p><h1 id="dashboard-title">Water levels, visible before they become a problem.</h1><p>Remote readings from three residential tanks. Alerts appear before shortage or overflow.</p></div>
+          <div class="last-sync"><span>LAST CLOUD SYNC</span><strong id="sync-time">Just now</strong><small>Blynk Cloud · Wi‑Fi connected</small></div>
+        </div>
+
+        <section class="status-strip" aria-label="Building water system summary"><div><span>MONITORED TANKS</span><strong>3</strong></div><div><span>AVERAGE LEVEL</span><strong id="average-level">63%</strong></div><div><span>ACTIVE ALERTS</span><strong id="alert-count">1</strong></div><div><span>PUMP CONTROL</span><strong class="ready">READY</strong></div></section>
+
+        <section class="tank-grid" aria-label="Tank level cards">
+          <article class="tank-card selected" data-tank="Tower A"><div class="card-head"><span>TOWER A · ROOFTOP</span><b class="status-normal" id="tower-a-state">Normal</b></div><div class="tank-visual"><div class="tank-outline"><div class="water" id="tower-a-water"></div><div class="markings"><span>100</span><span>50</span><span>0</span></div></div><div><strong class="tank-number" id="tower-a-number">80%</strong><p id="tower-a-copy">Good reserve available</p></div></div><footer><span>Ultrasonic sensor</span><span id="tower-a-updated">Updated now</span></footer></article>
+          <article class="tank-card" data-tank="Tower B"><div class="card-head"><span>TOWER B · 5TH FLOOR</span><b class="status-low">Low</b></div><div class="tank-visual"><div class="tank-outline"><div class="water low" style="height:15%"></div><div class="markings"><span>100</span><span>50</span><span>0</span></div></div><div><strong class="tank-number">15%</strong><p>Refill required soon</p></div></div><footer><span>Ultrasonic sensor</span><span>Updated 14s ago</span></footer></article>
+          <article class="tank-card" data-tank="Tower C"><div class="card-head"><span>TOWER C · GROUND</span><b class="status-watch">Watch</b></div><div class="tank-visual"><div class="tank-outline"><div class="water watch" style="height:95%"></div><div class="markings"><span>100</span><span>50</span><span>0</span></div></div><div><strong class="tank-number">95%</strong><p>Near overflow limit</p></div></div><footer><span>Ultrasonic sensor</span><span>Updated 9s ago</span></footer></article>
+        </section>
+
+        <section class="dashboard-bottom"><article class="panel readings"><div class="panel-title"><div><p class="eyebrow">SIMULATE A READING</p><h2>Tower A level</h2></div><span class="pin">V1 · WATER LEVEL</span></div><div class="level-buttons"><button data-level="15">15%<small>Low</small></button><button data-level="50">50%<small>Partial</small></button><button class="selected-level" data-level="80">80%<small>Normal</small></button><button data-level="95">95%<small>Overflow</small></button></div><div class="chart"><div class="chart-label"><span>Level history · last 6 readings</span><span id="chart-current">80%</span></div><svg viewBox="0 0 560 170" role="img" aria-label="Water level history chart"><path class="gridline" d="M20 20H540M20 82H540M20 145H540"/><polyline id="chart-line" points="20,118 124,104 228,112 332,75 436,83 540,52"/><circle id="chart-dot" cx="540" cy="52" r="6"/></svg><div class="chart-axis"><span>10:00</span><span>10:15</span><span>10:30</span><span>10:45</span><span>11:00</span><span>Now</span></div></div></article>
+          <aside class="panel alert-panel"><p class="eyebrow">AUTOMATIC ALERT</p><h2 id="alert-title">Tower B is low</h2><p id="alert-copy">15% remaining. Notify maintenance team and start the refill cycle.</p><div class="alert-rule"><span>Low level rule</span><b>&lt; 20%</b></div><div class="alert-rule"><span>Overflow rule</span><b>&gt; 90%</b></div><button class="outline-button" id="acknowledge">Acknowledge alert</button></aside></section>
+      </section>
+
+      <section id="health" class="page" aria-labelledby="health-title">
+        <div class="hero compact"><div><p class="eyebrow">SYSTEM DIAGNOSTICS</p><h1 id="health-title">Is the monitoring system accurate?</h1><p>Live health indicators show whether each part is online, calibrated, and sending trustworthy readings.</p></div><div class="last-sync"><span>OVERALL CONFIDENCE</span><strong>98.4%</strong><small>All essential components online</small></div></div>
+        <section class="health-summary"><div><span>COMPONENTS ONLINE</span><strong>5 / 5</strong></div><div><span>AVERAGE WI‑FI LATENCY</span><strong>42 ms</strong></div><div><span>LAST SENSOR SAMPLE</span><strong>8 sec ago</strong></div></section>
+        <section class="component-grid">
+          <article class="component-card"><div class="component-icon">▣</div><div class="component-head"><div><p class="eyebrow">SENSOR</p><h2>Ultrasonic level sensor</h2></div><b class="healthy">Healthy</b></div><p>Measures the distance from sensor to water surface and converts it into tank-fill percentage.</p><dl><div><dt>Signal confidence</dt><dd>99%</dd></div><div><dt>Calibration offset</dt><dd>+0.3 cm</dd></div><div><dt>Reading range</dt><dd>15–95%</dd></div></dl><footer><span class="pulse"></span> Last sample received 8 sec ago</footer></article>
+          <article class="component-card"><div class="component-icon">⌁</div><div class="component-head"><div><p class="eyebrow">IOT DEVICE</p><h2>ESP8266 NodeMCU</h2></div><b class="healthy">Online</b></div><p>Reads the sensor on a GPIO pin, applies thresholds, and transmits the result through built-in Wi‑Fi.</p><dl><div><dt>Uptime</dt><dd>6h 14m</dd></div><div><dt>Supply voltage</dt><dd>3.30 V</dd></div><div><dt>Firmware</dt><dd>v1.0.0</dd></div></dl><footer><span class="pulse"></span> Blynk timer running every 2 sec</footer></article>
+          <article class="component-card"><div class="component-icon">⌁</div><div class="component-head"><div><p class="eyebrow">CONNECTIVITY</p><h2>Wi‑Fi network</h2></div><b class="healthy">Stable</b></div><p>Carries readings from NodeMCU to the cloud dashboard. Local alert can still work if Wi‑Fi is lost.</p><dl><div><dt>Signal strength</dt><dd>−56 dBm</dd></div><div><dt>Latency</dt><dd>42 ms</dd></div><div><dt>Packet loss</dt><dd>0%</dd></div></dl><footer><span class="pulse"></span> Internet route reachable</footer></article>
+          <article class="component-card"><div class="component-icon">☁</div><div class="component-head"><div><p class="eyebrow">CLOUD PLATFORM</p><h2>Blynk IoT dashboard</h2></div><b class="healthy">Synced</b></div><p>Receives the virtual-pin value, displays gauges/charts, and can send phone notifications.</p><dl><div><dt>Virtual pin</dt><dd>V1</dd></div><div><dt>Last cloud write</dt><dd>Just now</dd></div><div><dt>Alert channel</dt><dd>Enabled</dd></div></dl><footer><span class="pulse"></span> Dashboard data current</footer></article>
+          <article class="component-card"><div class="component-icon">⚡</div><div class="component-head"><div><p class="eyebrow">OPTIONAL ACTUATOR</p><h2>Relay + water pump</h2></div><b class="ready-badge">Ready</b></div><p>In a real installation, a relay can safely switch the pump based on low/overflow threshold logic.</p><dl><div><dt>Mode</dt><dd>Manual safe</dd></div><div><dt>Relay state</dt><dd>OFF</dd></div><div><dt>Safety rule</dt><dd>Stop at 95%</dd></div></dl><footer><span class="muted-dot"></span> Demonstration mode — not controlling hardware</footer></article>
+        </section>
+        <section class="accuracy-note"><div><p class="eyebrow">VIVA NOTE</p><h2>How accuracy is maintained</h2></div><p>Keep the sensor above the maximum water line, measure the empty-tank distance during calibration, reject impossible readings, and compare a few readings with a manual scale. If sensor data becomes invalid, the device should send an alert instead of making automatic pump decisions.</p></section>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
